@@ -1,8 +1,12 @@
 import "./Card.css";
 
-const Card = ({ book, onChangeBook }) => {
+const Card = ({ book, onChange, onDelete }) => {
   const handleIsReadChange = (event) => {
-    onChangeBook({ ...book, isRead: event.target.checked });
+    onChange({ ...book, isRead: event.target.checked });
+  };
+
+  const handleDelete = () => {
+    onDelete(book.id);
   };
 
   return (
@@ -18,7 +22,9 @@ const Card = ({ book, onChangeBook }) => {
           checked={book.isRead}
         />
       </div>
-      <button className="card__btn btn btn--red">Remove</button>
+      <button className="card__btn btn btn--red" onClick={handleDelete}>
+        Remove
+      </button>
     </div>
   );
 };

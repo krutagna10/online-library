@@ -23,12 +23,19 @@ const Library = () => {
   };
 
   const handleChangeBook = (editedBook) => {
-    console.log(editedBook);
     setBooks((prevBooks) => {
-      const nextBooks = prevBooks.map((book) => {
+      const updatedBooks = prevBooks.map((book) => {
         return editedBook.id === book.id ? editedBook : book;
       });
-      return nextBooks;
+      return updatedBooks;
+    });
+  };
+
+  const handleDeleteBook = (deleteId) => {
+    console.log("Hello");
+    setBooks((prevBooks) => {
+      const updatedBooks = prevBooks.filter((book) => deleteId !== book.id);
+      return updatedBooks;
     });
   };
 
@@ -45,7 +52,11 @@ const Library = () => {
 
         {isFormVisible && <AddBook onAddBook={handleAddBook} />}
 
-        <Books books={books} onChangeBook={handleChangeBook} />
+        <Books
+          books={books}
+          onChangeBook={handleChangeBook}
+          onDeleteBook={handleDeleteBook}
+        />
       </div>
     </section>
   );

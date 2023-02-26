@@ -25,10 +25,9 @@ const Library = () => {
   const handleChangeBook = (editedBook) => {
     console.log(editedBook);
     setBooks((prevBooks) => {
-      const nextBooks = prevBooks.filter((book) => {
+      const nextBooks = prevBooks.map((book) => {
         return editedBook.id === book.id ? editedBook : book;
       });
-      console.log(nextBooks);
       return nextBooks;
     });
   };

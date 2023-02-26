@@ -23,12 +23,13 @@ const Library = () => {
   };
 
   const handleChangeBook = (editedBook) => {
-    console.log(books);
-    const nextBooks = books.filter((book) => {
-      return editedBook.id === book.id ? editedBook : book;
+    console.log(editedBook);
+    setBooks((prevBooks) => {
+      const nextBooks = prevBooks.filter((book) => {
+        return editedBook.id === book.id ? editedBook : book;
+      });
+      return nextBooks;
     });
-    console.log(nextBooks);
-    setBooks(nextBooks);
   };
 
   const handleClick = () => {

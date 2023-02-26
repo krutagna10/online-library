@@ -1,9 +1,8 @@
 import "./Card.css";
 
-const Card = ({ book, onChange }) => {
+const Card = ({ book, onChangeBook }) => {
   const handleIsReadChange = (event) => {
-    console.log("hello");
-    onChange({ ...book, isRead: event.target.checked });
+    onChangeBook({ ...book, isRead: event.target.checked });
   };
 
   return (
@@ -14,7 +13,6 @@ const Card = ({ book, onChange }) => {
       <div>
         <label htmlFor="card__input">Read : </label>
         <input
-          id="card__input"
           type="checkbox"
           onChange={handleIsReadChange}
           checked={book.isRead}

@@ -5,7 +5,7 @@ const Books = ({ books, onChangeBook }) => {
   return (
     <div className="books container">
       {books.map((book) => (
-        <Card key={book.id} book={book} onChange={onChangeBook} />
+        <Card key={book.id} book={book} onChangeBook={onChangeBook} />
       ))}
     </div>
   );

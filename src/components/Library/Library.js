@@ -9,11 +9,31 @@ const Library = () => {
   const [books, setBooks] = useState(data);
   const [isFormVisible, setIsFormVisible] = useState(false);
 
+  const handleAddBook = ({ title, author, pages, isRead }) => {
+    const newBook = {
+      id: uuid(),
+      title: title,
+      author: author,
+      pages: pages,
+      isRead: isRead,
+    };
+    setBooks((prevBooks) => [...prevBooks, newBook]);
+
+    setIsFormVisible(false);
+  };
+
+  const handleChangeBook = (editedBook) => {
+    console.log(books);
+    const nextBooks = books.filter((book) => {
+      return editedBook.id === book.id ? editedBook : book;
+    });
+    console.log(nextBooks);
+    setBooks(nextBooks);
+  };
+
   const handleClick = () => {
     setIsFormVisible(true);
   };
-
-  console.log(crypto.randomUUID());
 
   return (
     <section className="library-section">
@@ -22,9 +42,9 @@ const Library = () => {
           Add Book
         </button>
 
-        {isFormVisible && <AddBook />}
+        {isFormVisible && <AddBook onAddBook={handleAddBook} />}
 
-        <Books books={books} />
+        <Books books={books} onChangeBook={handleChangeBook} />
       </div>
     </section>
   );

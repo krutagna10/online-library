@@ -1,7 +1,7 @@
 import "./AddBook.css";
 import { useState } from "react";
 
-const AddBook = (props) => {
+const AddBook = ({ onAddBook }) => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [pages, setPages] = useState("");
@@ -25,13 +25,12 @@ const AddBook = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    const bookData = {
-      id: "book" + Math.random(),
+    onAddBook({
       title: title,
       author: author,
-      pages: Number(pages),
+      pages: pages,
       isRead: isRead,
-    };
+    });
   };
 
   return (

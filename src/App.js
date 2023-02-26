@@ -1,30 +1,16 @@
-import Header from './components/Header/Header';
-import Book from './components/Book/Book';
-import {useState} from "react";
+import Header from "./components/Header/Header";
+import Library from "./components/Library/Library";
+import React from "react";
 
 function App() {
-    const [showOverlay, setShowOverlay] = useState(false);
-
-    const hideOverlayFunction = () => {
-        setShowOverlay(false);
-    }
-
-    const showOverlayFunction = () => {
-        setShowOverlay(true);
-    }
-
-    return (
-        <div className='app'>
-            <Header/>
-            <Book
-                hideOverlay={hideOverlayFunction}
-                showOverlay={showOverlayFunction}
-            />
-            {showOverlay && (
-                <div className='overlay'></div>
-                )}
-        </div>
-    );
+  return (
+    <React.Fragment>
+      <main>
+        <Header />
+        <Library />
+      </main>
+    </React.Fragment>
+  );
 }
 
 export default App;

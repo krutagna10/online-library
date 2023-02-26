@@ -1,4 +1,4 @@
-.book__edit-form-wrapper {
+.form-wrapper {
     position: absolute;
     background-color: var(--white);
     padding: 2rem;
@@ -10,11 +10,7 @@
     border-radius: 0.25rem;
 }
 
-.book__edit-input-label--read {
-    margin-right: 1rem;
-}
-
-.book__edit-form-btn--close {
+.form__btn-close {
     background: transparent;
     border: none;
     cursor: pointer;
@@ -23,3 +19,4 @@
     right: 3%;
     font-size: 1.6rem;
 }
+

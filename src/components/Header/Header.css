@@ -1,11 +1,16 @@
-.header-section {
+.header {
     background-color: var(--white);
 }
 
-.header {
+.header__container {
     padding-block: 1rem;
 }
 
-.header__logo {
+.header__heading-link {
+    text-decoration: none;
+}
+
+.header__heading {
     font-size: 2.5rem;
+    color: var(--black);
 }

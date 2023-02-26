@@ -1,16 +1,17 @@
-import './Header.css'
+import HeaderNav from "../HeaderNav/HeaderNav";
+import "./Header.css";
 
 const Header = () => {
-    return (
-        <section className='header-section'>
-            <div className='header container flex flex--justify-space flex--align-center'>
-                <div className='header__logo-wrapper'>
-                    <h1 className='header__logo'>library</h1>
-                </div>
-                <button className='header__btn btn'>Log in</button>
-            </div>
-        </section>
-    )
-}
+  return (
+    <header className="header">
+      <div className="header__container container flex flex--justify-space flex--align-center">
+        <a href="/" className="header__heading-link">
+          <h1 className="header__heading">library</h1>
+        </a>
+        <HeaderNav />
+      </div>
+    </header>
+  );
+};
 
 export default Header;

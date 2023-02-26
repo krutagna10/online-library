@@ -8,10 +8,6 @@
     --font-size-100: 0.75rem;
 
     /* Colors */
-    --peach: hsl(11, 81%, 71%);
-    --dark-peach: hsl(11, 66%, 64%);
-    --light-peach: hsl(11, 100%, 80%);
-    --very-light-peach: #FDF3F0;
     --black: hsl(270, 3%, 11%);
     --dark-blue: hsl(238, 29%, 16%);
     --white: #fffbfb;
@@ -64,9 +60,9 @@ body {
     min-height: 100vh;
     line-height: 1.5;
     font-family: var(--font-kumbh-sans);
-    background-color: var(--grey);
     position: relative;
     color: var(--black);
+    background-color: var(--white)
 }
 
 /* Overlay */
@@ -78,7 +74,7 @@ body {
 
 /* Utility Classes */
 .container {
-    max-width: 65rem;
+    max-width: 75rem;
     padding-inline: 1rem;
     margin-inline: auto;
 }
@@ -96,7 +92,6 @@ body {
     padding: 0.5rem 1.25rem;
     border: none;
     border-radius: 0.25rem;
-    background-color: var(--white);
     box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.35);
     transition: all 0.3s ease;
 }

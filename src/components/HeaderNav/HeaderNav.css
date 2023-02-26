@@ -1,0 +1,30 @@
+.header__nav-list {
+  list-style: none;
+  gap: 3rem;
+}
+
+.header__nav-link {
+  font-weight: 500;
+  color: var(--black);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.header__nav-link--text {
+  font-size: 1.125rem;
+  border-bottom: 1px solid transparent;
+}
+
+.header__nav-link--text:hover {
+  border-bottom: 1px solid black;
+}
+
+.header__nav-link--icon {
+  font-size: 1.375rem;
+  display: grid;
+  place-content: center;
+}
+
+
+
+

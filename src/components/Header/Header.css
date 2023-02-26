@@ -1,0 +1,11 @@
+.header-section {
+    background-color: var(--white);
+}
+
+.header {
+    padding-block: 1rem;
+}
+
+.header__logo {
+    font-size: 2.5rem;
+}

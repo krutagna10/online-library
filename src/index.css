@@ -1,0 +1,161 @@
+/* Root variables */
+:root {
+    /* Typography */
+    --font-kumbh-sans: 'Kumbh Sans', sans-serif;
+
+    --font-size-300: 2rem;
+    --font-size-200: 0.875rem;
+    --font-size-100: 0.75rem;
+
+    /* Colors */
+    --peach: hsl(11, 81%, 71%);
+    --dark-peach: hsl(11, 66%, 64%);
+    --light-peach: hsl(11, 100%, 80%);
+    --very-light-peach: #FDF3F0;
+    --black: hsl(270, 3%, 11%);
+    --dark-blue: hsl(238, 29%, 16%);
+    --white: #fffbfb;
+    --grey: #f0eef1;
+    --red: #ff7070;
+    --green: #76e572;
+    --light-green: #9fff9c;
+    --light-red: #ff9c9c;
+
+    /* Spacing */
+    --flow-space: 1rem;
+    --gap: 1rem;
+}
+
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img,
+picture {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+input[type='checkbox'] {
+    cursor: pointer;
+}
+
+input {
+    padding: 0.5rem 1rem;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    font-family: var(--font-kumbh-sans);
+    background-color: var(--grey);
+    position: relative;
+    color: var(--black);
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    inset: 0;
+}
+
+/* Utility Classes */
+.container {
+    max-width: 65rem;
+    padding-inline: 1rem;
+    margin-inline: auto;
+}
+
+/* Spacing */
+.flow > * + * {
+    margin-top: var(--flow-space);
+}
+
+/* Button Utility */
+.btn {
+    display: block;
+    white-space: nowrap;
+    cursor: pointer;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: var(--white);
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease;
+}
+
+.btn--red {
+    background-color: var(--light-red);
+}
+
+.btn--red:hover {
+    background-color: var(--red);
+}
+
+.btn--green {
+    background-color: var(--light-green);
+}
+
+.btn--green:hover {
+    background-color: var(--green)
+}
+
+/* Flex Utility */
+.flex {
+    display: flex;
+}
+
+.flex--gap {
+    gap: var(--gap);
+}
+
+.flex--justify-space {
+    justify-content: space-between;
+}
+
+.flex--align-center {
+    align-items: center;
+}
+
+.flex--justify-center {
+    justify-content: center;
+}
+
+.flex--center {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Grid Utility */
+.grid {
+    display: grid;
+}
+
+.grid--gap {
+    gap: var(--gap);
+}
+
+.grid--content-center {
+    place-content: center;
+}
+
+.grid--items-center {
+    place-items: center;
+}

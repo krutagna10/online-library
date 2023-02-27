@@ -1,5 +1,7 @@
 .header {
     background-color: var(--white);
+    position: relative;
+    z-index: 10;
 }
 
 .header__container {
@@ -13,4 +15,23 @@
 .header__heading {
     font-size: 2.5rem;
     color: var(--black);
+}
+
+.header__nav-toggle {
+    width: 2rem;
+    height: 1.6rem;
+    background: transparent url("/src/assets/icon-hamburger.svg") no-repeat center;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.header__nav-toggle[aria-expanded="true"] {
+    background-image: url("/src/assets/icon-close.svg");
+}
+
+@media (min-width: 48em) {
+    .header__nav-toggle {
+        display: none;
+    }
 }

@@ -1,7 +1,7 @@
 import "./AddBook.css";
 import { useState } from "react";
 
-const AddBook = ({ onAddBook }) => {
+const AddBook = ({ onAddBook, onCloseForm }) => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [pages, setPages] = useState("");
@@ -88,7 +88,7 @@ const AddBook = ({ onAddBook }) => {
         <button className="form__btn btn btn--green" type="submit">
           Add Book
         </button>
-        <button className="form__btn-close" type="button">
+        <button className="form__btn-close" type="button" onClick={onCloseForm}>
           <ion-icon name="close-outline"></ion-icon>
         </button>
       </form>

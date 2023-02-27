@@ -1,5 +1,6 @@
 import AddBook from "../AddBook/AddBook";
 import Books from "../Books/Books";
+import Backdrop from "../UI/Backdrop/Backdrop";
 import uuid from "react-uuid";
 import data from "../AddBook/data";
 import { useState } from "react";
@@ -32,25 +33,35 @@ const Library = () => {
   };
 
   const handleDeleteBook = (deleteId) => {
-    console.log("Hello");
     setBooks((prevBooks) => {
       const updatedBooks = prevBooks.filter((book) => deleteId !== book.id);
       return updatedBooks;
     });
   };
 
-  const handleClick = () => {
+  const handleOpenForm = () => {
     setIsFormVisible(true);
+  };
+
+  const handleCloseForm = () => {
+    setIsFormVisible(false);
   };
 
   return (
     <section className="library-section">
       <div className="library">
-        <button className="library__btn btn btn--green" onClick={handleClick}>
+        {isFormVisible && <Backdrop className="library__backdrop" />}
+
+        <button
+          className="library__btn btn btn--green"
+          onClick={handleOpenForm}
+        >
           Add Book
         </button>
 
-        {isFormVisible && <AddBook onAddBook={handleAddBook} />}
+        {isFormVisible && (
+          <AddBook onAddBook={handleAddBook} onCloseForm={handleCloseForm} />
+        )}
 
         <Books
           books={books}

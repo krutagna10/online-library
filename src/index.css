@@ -1,25 +1,25 @@
 /* Root variables */
 :root {
-    /* Typography */
-    --font-kumbh-sans: 'Kumbh Sans', sans-serif;
+  /* Typography */
+  --font-kumbh-sans: 'Kumbh Sans', sans-serif;
 
-    --font-size-300: 2rem;
-    --font-size-200: 0.875rem;
-    --font-size-100: 0.75rem;
+  --font-size-300: 2rem;
+  --font-size-200: 0.875rem;
+  --font-size-100: 0.75rem;
 
-    /* Colors */
-    --black: hsl(270, 3%, 11%);
-    --dark-blue: hsl(238, 29%, 16%);
-    --white: #fffbfb;
-    --grey: #f0eef1;
-    --red: #ff7070;
-    --green: #76e572;
-    --light-green: #9fff9c;
-    --light-red: #ff9c9c;
+  /* Colors */
+  --black: hsl(270, 3%, 11%);
+  --dark-blue: hsl(238, 29%, 16%);
+  --white: #fffbfb;
+  --grey: #f0eef1;
+  --red: #ff7070;
+  --green: #76e572;
+  --light-green: #9fff9c;
+  --light-red: #ff9c9c;
 
-    /* Spacing */
-    --flow-space: 1rem;
-    --gap: 1rem;
+  /* Spacing */
+  --flow-space: 1rem;
+  --gap: 1rem;
 }
 
 
@@ -27,65 +27,83 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 img,
 picture {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 button,
 input {
-    font: inherit;
+  font: inherit;
 }
 
 input[type='checkbox'] {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 input {
-    padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-    min-height: 100vh;
-    line-height: 1.5;
-    font-family: var(--font-kumbh-sans);
-    position: relative;
-    color: var(--black);
-    background-color: var(--white)
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: var(--font-kumbh-sans);
+  position: relative;
+  color: var(--black);
+  background-color: var(--white)
 }
 
-/* Overlay */
-.overlay {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
-    inset: 0;
+/* Remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
-/* Utility Classes */
-.container {
-    max-width: 75rem;
+.visually-hidden {
+  position: absolute;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+
+  /* Utility Classes */
+  .container {
+    max-width: 65rem;
     padding-inline: 1rem;
     margin-inline: auto;
-}
+  }
 
-/* Spacing */
-.flow > * + * {
+  /* Spacing */
+  .flow > * + * {
     margin-top: var(--flow-space);
-}
+  }
 
-/* Button Utility */
-.btn {
+  /* Button Utility */
+  .btn {
     display: block;
     white-space: nowrap;
     cursor: pointer;
@@ -94,63 +112,63 @@ body {
     border-radius: 0.25rem;
     box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.35);
     transition: all 0.3s ease;
-}
+  }
 
-.btn--red {
+  .btn--red {
     background-color: var(--light-red);
-}
+  }
 
-.btn--red:hover {
+  .btn--red:hover {
     background-color: var(--red);
-}
+  }
 
-.btn--green {
+  .btn--green {
     background-color: var(--light-green);
-}
+  }
 
-.btn--green:hover {
+  .btn--green:hover {
     background-color: var(--green)
-}
+  }
 
-/* Flex Utility */
-.flex {
+  /* Flex Utility */
+  .flex {
     display: flex;
-}
+  }
 
-.flex--gap {
+  .flex--gap {
     gap: var(--gap);
-}
+  }
 
-.flex--justify-space {
+  .flex--justify-space {
     justify-content: space-between;
-}
+  }
 
-.flex--align-center {
+  .flex--align-center {
     align-items: center;
-}
+  }
 
-.flex--justify-center {
+  .flex--justify-center {
     justify-content: center;
-}
+  }
 
-.flex--center {
+  .flex--center {
     justify-content: center;
     align-items: center;
-}
+  }
 
-/* Grid Utility */
-.grid {
+  /* Grid Utility */
+  .grid {
     display: grid;
-}
+  }
 
-.grid--gap {
+  .grid--gap {
     gap: var(--gap);
-}
+  }
 
-.grid--content-center {
+  .grid--content-center {
     place-content: center;
-}
+  }
 
-.grid--items-center {
+  .grid--items-center {
     place-items: center;
-}
+  }

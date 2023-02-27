@@ -2,10 +2,14 @@ import "./HeaderNav.css";
 import cartIcon from "../../assets/cart-outline.svg";
 import personIcon from "../../assets/person-outline.svg";
 
-const HeaderNav = () => {
+const HeaderNav = ({ isNavigationVisible }) => {
   return (
-    <nav className="header__nav">
-      <ul className="header__nav-list flex flex--gap flex--align-center">
+    <nav className="header__nav" aria-label="Primary">
+      <ul
+        id="header__nav-list"
+        className="header__nav-list flex flex--gap flex--align-center"
+        data-visible={isNavigationVisible}
+      >
         <li>
           <a className="header__nav-link header__nav-link--text" href="/">
             Home

@@ -2,7 +2,13 @@
   padding-block: 3.5rem;
 }
 
+.library__backdrop {
+  z-index: 49;
+}
+
 .library__btn {
   margin-inline: auto;
 }
+
+
 

@@ -22,6 +22,7 @@ const Card = ({ book, onChange, onDelete }) => {
           checked={book.isRead}
         />
       </div>
+      <button className="btn btn--yellow">Edit</button>
       <button className="card__btn btn btn--red" onClick={handleDelete}>
         Remove
       </button>

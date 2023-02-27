@@ -1,9 +1,10 @@
 import Card from "../Card/Card";
+import Container from "../UI/Container/Container";
 import "./Books.css";
 
 const Books = ({ books, onChangeBook, onDeleteBook }) => {
   return (
-    <div className="books container">
+    <Container className="books">
       {books.map((book) => (
         <Card
           key={book.id}
@@ -12,7 +13,7 @@ const Books = ({ books, onChangeBook, onDeleteBook }) => {
           onDelete={onDeleteBook}
         />
       ))}
-    </div>
+    </Container>
   );
 };
 

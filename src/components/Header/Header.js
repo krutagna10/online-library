@@ -1,5 +1,6 @@
 import HeaderNav from "../HeaderNav/HeaderNav";
 import Backdrop from "../UI/Backdrop/Backdrop";
+import Container from "../UI/Container/Container";
 import "./Header.css";
 import { useState } from "react";
 
@@ -12,7 +13,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="header__container container flex flex--justify-space flex--align-center">
+      <Container className="header__container flex flex--justify-space flex--align-center">
         <a href="/" className="header__heading-link">
           <h1 className="header__heading">library</h1>
         </a>
@@ -26,7 +27,7 @@ const Header = () => {
           <span className="visually-hidden">Menu</span>
         </button>
         <HeaderNav isNavigationVisible={isNavigationVisible} />
-      </div>
+      </Container>
     </header>
   );
 };

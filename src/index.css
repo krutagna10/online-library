@@ -16,6 +16,7 @@
   --green: #76e572;
   --light-green: #9fff9c;
   --light-red: #ff9c9c;
+  --blue: #24a0ed;
 
   /* Spacing */
   --flow-space: 1rem;
@@ -128,6 +129,14 @@ body {
 
   .btn--green:hover {
     background-color: var(--green)
+  }
+
+  .btn--yellow {
+    background-color: #ffe066;
+  }
+
+  .btn--yellow:hover {
+    background-color: #fcc419;
   }
 
   /* Flex Utility */

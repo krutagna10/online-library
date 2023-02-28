@@ -78,6 +78,7 @@ body {
   }
 }
 
+/* Utility Classes */
 .visually-hidden {
   position: absolute;
   width: 1px !important;
@@ -85,99 +86,55 @@ body {
   padding: 0 !important;
   margin: -1px !important;
   overflow: hidden !important;
-  clip: rect(0,0,0,0) !important;
+  clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
 }
 
+/* Spacing */
+.flow > * + * {
+  margin-top: var(--flow-space);
+}
 
-  /* Utility Classes */
-  .container {
-    max-width: 65rem;
-    padding-inline: 1rem;
-    margin-inline: auto;
-  }
+/* Flex Utility */
+.flex {
+  display: flex;
+}
 
-  /* Spacing */
-  .flow > * + * {
-    margin-top: var(--flow-space);
-  }
+.flex--gap {
+  gap: var(--gap);
+}
 
-  /* Button Utility */
-  .btn {
-    display: block;
-    white-space: nowrap;
-    cursor: pointer;
-    padding: 0.5rem 1.25rem;
-    border: none;
-    border-radius: 0.25rem;
-    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.35);
-    transition: all 0.3s ease;
-  }
+.flex--justify-space {
+  justify-content: space-between;
+}
 
-  .btn--red {
-    background-color: var(--light-red);
-  }
+.flex--align-center {
+  align-items: center;
+}
 
-  .btn--red:hover {
-    background-color: var(--red);
-  }
+.flex--justify-center {
+  justify-content: center;
+}
 
-  .btn--green {
-    background-color: var(--light-green);
-  }
+.flex--center {
+  justify-content: center;
+  align-items: center;
+}
 
-  .btn--green:hover {
-    background-color: var(--green)
-  }
+/* Grid Utility */
+.grid {
+  display: grid;
+}
 
-  .btn--yellow {
-    background-color: #ffe066;
-  }
+.grid--gap {
+  gap: var(--gap);
+}
 
-  .btn--yellow:hover {
-    background-color: #fcc419;
-  }
+.grid--content-center {
+  place-content: center;
+}
 
-  /* Flex Utility */
-  .flex {
-    display: flex;
-  }
-
-  .flex--gap {
-    gap: var(--gap);
-  }
-
-  .flex--justify-space {
-    justify-content: space-between;
-  }
-
-  .flex--align-center {
-    align-items: center;
-  }
-
-  .flex--justify-center {
-    justify-content: center;
-  }
-
-  .flex--center {
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* Grid Utility */
-  .grid {
-    display: grid;
-  }
-
-  .grid--gap {
-    gap: var(--gap);
-  }
-
-  .grid--content-center {
-    place-content: center;
-  }
-
-  .grid--items-center {
-    place-items: center;
-  }
+.grid--items-center {
+  place-items: center;
+}

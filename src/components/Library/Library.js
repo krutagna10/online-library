@@ -1,8 +1,8 @@
 import AddBook from "../AddBook/AddBook";
 import Books from "../Books/Books";
 import Backdrop from "../UI/Backdrop/Backdrop";
-import uuid from "react-uuid";
-import data from "../AddBook/data";
+import Button from "../UI/Button/Button";
+import data from "./data";
 import { useState } from "react";
 import "./Library.css";
 
@@ -12,7 +12,7 @@ const Library = () => {
 
   const handleAddBook = ({ title, author, pages, isRead }) => {
     const newBook = {
-      id: uuid(),
+      id: crypto.randomUUID(),
       title: title,
       author: author,
       pages: pages,
@@ -52,12 +52,9 @@ const Library = () => {
       <div className="library">
         {isFormVisible && <Backdrop className="library__backdrop" />}
 
-        <button
-          className="library__btn btn btn--green"
-          onClick={handleOpenForm}
-        >
+        <Button className="library__btn btn--green" onClick={handleOpenForm}>
           Add Book
-        </button>
+        </Button>
 
         {isFormVisible && (
           <AddBook onAddBook={handleAddBook} onCloseForm={handleCloseForm} />

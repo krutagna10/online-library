@@ -4,7 +4,7 @@ import "./Books.css";
 
 const Books = ({ books, onChangeBook, onDeleteBook }) => {
   return (
-    <Container className="books">
+    <Container className="books grid">
       {books.map((book) => (
         <Card
           key={book.id}

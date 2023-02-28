@@ -10,13 +10,6 @@
     border-radius: 0.25rem;
 }
 
-.form__btn-close {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 3.5%;
-    right: 5%;
-    font-size: 1.6rem;
+.form__btn {
+    width: 100%;
 }
-

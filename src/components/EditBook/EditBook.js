@@ -42,18 +42,21 @@ const EditBook = ({
       <input
         type="text"
         value={enteredTitle}
+        placeholder="Title"
         onChange={handleEnteredTitleChange}
         required
       />
       <input
         type="text"
         value={enteredAuthor}
+        placeholder="Author"
         onChange={handleEnteredAuthorChange}
         required
       />
       <input
         type="text"
         value={enteredPages}
+        placeholder="Pages"
         onChange={handleEnteredPagesChange}
         required
       />

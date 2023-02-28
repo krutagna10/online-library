@@ -2,7 +2,7 @@ import "./AddBook.css";
 import { useState } from "react";
 import Button from "../UI/Button/Button";
 
-const AddBook = ({ onAddBook, onCloseForm }) => {
+const AddBook = ({ onAddBook, onClose }) => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [pages, setPages] = useState("");
@@ -89,7 +89,7 @@ const AddBook = ({ onAddBook, onCloseForm }) => {
         <Button className="form__btn btn--green" type="submit">
           Add Book
         </Button>
-        <Button className="form__btn btn--red" onClick={onCloseForm}>
+        <Button className="form__btn btn--red" onClick={onClose}>
           Cancel
         </Button>
       </form>

@@ -3,12 +3,26 @@ import Books from "../Books/Books";
 import Backdrop from "../UI/Backdrop/Backdrop";
 import Button from "../UI/Button/Button";
 import data from "./data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Library.css";
 
 const Library = () => {
   const [books, setBooks] = useState(data);
   const [isFormVisible, setIsFormVisible] = useState(false);
+
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (isFormVisible && event.key === "Escape") {
+        setIsFormVisible(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isFormVisible]);
 
   const handleAddBook = ({ title, author, pages, isRead }) => {
     const newBook = {
@@ -39,25 +53,27 @@ const Library = () => {
     });
   };
 
-  const handleOpenForm = () => {
+  const showForm = () => {
     setIsFormVisible(true);
   };
 
-  const handleCloseForm = () => {
+  const hideForm = () => {
     setIsFormVisible(false);
   };
 
   return (
     <section className="library-section">
       <div className="library">
-        {isFormVisible && <Backdrop className="library__backdrop" />}
+        {isFormVisible && (
+          <Backdrop className="library__backdrop" onClick={hideForm} />
+        )}
 
-        <Button className="library__btn btn--green" onClick={handleOpenForm}>
+        <Button className="library__btn btn--green" onClick={showForm}>
           Add Book
         </Button>
 
         {isFormVisible && (
-          <AddBook onAddBook={handleAddBook} onCloseForm={handleCloseForm} />
+          <AddBook onAddBook={handleAddBook} onClose={hideForm} />
         )}
 
         <Books

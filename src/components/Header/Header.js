@@ -2,13 +2,23 @@ import HeaderNav from "../HeaderNav/HeaderNav";
 import Backdrop from "../UI/Backdrop/Backdrop";
 import Container from "../UI/Container/Container";
 import "./Header.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
-  const [isNavigationVisible, setIsNavigationVisible] = useState(false);
+  const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsMobileNavVisible(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+  }, []);
 
   const handleClick = () => {
-    setIsNavigationVisible((prevState) => !prevState);
+    setIsMobileNavVisible((prevState) => !prevState);
   };
 
   return (
@@ -17,16 +27,16 @@ const Header = () => {
         <a href="/" className="header__heading-link">
           <h1 className="header__heading">library</h1>
         </a>
-        {isNavigationVisible && <Backdrop />}
+        {isMobileNavVisible && <Backdrop />}
         <button
           className="header__nav-toggle"
           aria-controls="header__nav-list"
-          aria-expanded={isNavigationVisible}
+          aria-expanded={isMobileNavVisible}
           onClick={handleClick}
         >
           <span className="visually-hidden">Menu</span>
         </button>
-        <HeaderNav isNavigationVisible={isNavigationVisible} />
+        <HeaderNav isMobileNavVisible={isMobileNavVisible} />
       </Container>
     </header>
   );

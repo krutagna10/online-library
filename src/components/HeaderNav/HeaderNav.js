@@ -2,13 +2,13 @@ import "./HeaderNav.css";
 import cartIcon from "../../assets/cart-outline.svg";
 import personIcon from "../../assets/person-outline.svg";
 
-const HeaderNav = ({ isNavigationVisible }) => {
+const HeaderNav = ({ isMobileNavVisible }) => {
   return (
     <nav className="header__nav" aria-label="Primary">
       <ul
         id="header__nav-list"
         className="header__nav-list flex flex--gap flex--align-center"
-        data-visible={isNavigationVisible}
+        data-visible={isMobileNavVisible}
       >
         <li>
           <a className="header__nav-link header__nav-link--text" href="/">

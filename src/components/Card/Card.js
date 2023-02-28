@@ -1,4 +1,5 @@
 import Button from "../UI/Button/Button";
+import EditBook from "../EditBook/EditBook";
 import "./Card.css";
 import React, { useState } from "react";
 
@@ -9,54 +10,53 @@ const Card = ({ book, onChange, onDelete }) => {
     onDelete(book.id);
   };
 
-  const handleTitleChange = (event) => {
-    onChange({ ...book, title: event.target.value });
+  const handleIsReadChange = (isRead) => {
+    onChange({ ...book, isRead: isRead });
   };
 
-  const handleAuthorChange = (event) => {
-    onChange({ ...book, author: event.target.value });
+  const showEditing = () => {
+    setIsEditing(true);
   };
 
-  const handlePagesChange = (event) => {
-    onChange({ ...book, pages: event.target.value });
+  const handleSubmit = (title, author, pages, isRead) => {
+    onChange({
+      ...book,
+      title: title,
+      author: author,
+      pages: pages,
+      isRead: isRead,
+    });
+    setIsEditing(false);
   };
-
-  const handleIsReadChange = (event) => {
-    onChange({ ...book, isRead: event.target.checked });
-  };
-
-  const handleClick = () => {
-    setIsEditing((prevIsEditing) => !prevIsEditing);
-  };
-
-  const content = isEditing ? (
-    <React.Fragment>
-      <input type="text" value={book.title} onChange={handleTitleChange} />
-      <input type="text" value={book.author} onChange={handleAuthorChange} />
-      <input type="text" value={book.pages} onChange={handlePagesChange} />
-    </React.Fragment>
-  ) : (
-    <React.Fragment>
-      <h2 className="card__title">{book.title}</h2>
-      <p className="card__author">{book.author}</p>
-      <p className="card__pages">Pages: {book.pages}</p>
-    </React.Fragment>
-  );
 
   return (
     <div className="card grid grid--gap">
-      {content}
-      <div>
-        <label htmlFor="card__input">Read : </label>
-        <input
-          type="checkbox"
-          onChange={handleIsReadChange}
-          checked={book.isRead}
+      {isEditing ? (
+        <EditBook
+          {...book}
+          onSubmit={handleSubmit}
+          onIsReadChange={handleIsReadChange}
         />
-      </div>
-      <Button className="card__btn btn--yellow" onClick={handleClick}>
-        {isEditing ? "Save" : "Edit"}
-      </Button>
+      ) : (
+        <React.Fragment>
+          <h2 className="card__title">{book.title}</h2>
+          <p className="card__author">{book.author}</p>
+          <p className="card__pages">Pages: {book.pages}</p>
+          <div>
+            <label htmlFor="card__input">Read : </label>
+            <input
+              type="checkbox"
+              onChange={(event) => {
+                handleIsReadChange(event.target.checked);
+              }}
+              checked={book.isRead}
+            />
+          </div>
+          <Button className="card__btn btn--yellow" onClick={showEditing}>
+            Edit
+          </Button>
+        </React.Fragment>
+      )}
       <Button className="card__btn btn--red" onClick={handleDelete}>
         Remove
       </Button>

@@ -1,0 +1,8 @@
+.edit-form {
+  --flow-space: 1.5rem;
+}
+
+
+.edit-form__btn {
+  width: 100%;
+}

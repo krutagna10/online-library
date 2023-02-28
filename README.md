@@ -10,7 +10,7 @@
 
 ### Built with
 
-- React JS
+- React
 
 
 
